@@ -42,16 +42,28 @@ const Launch = (props) => {
   } = data.launch;
 
   return (
-    <>
+    <div className='launch-details-wrapper'>
+      <Link className='link-button' to='/'>
+        &#8592; Back
+      </Link>
+      <h1>Mission: {mission_name}</h1>
       <div>
-        <h1>Mission: {mission_name}</h1>
         <h4>Launch Details</h4>
         <ul>
           <li>Flight Number: {flight_number}</li>
           <li>Launch Year: {launch_year}</li>
-          <li>Launch Successful: {launch_success ? 'Yes' : 'No'}</li>
+          <li>
+            Launch Successful:{' '}
+            <span
+              className={classNames({
+                'mission-success': launch_success,
+                'mission-danger': !launch_success,
+              })}
+            ></span>
+          </li>
         </ul>
-
+      </div>
+      <div>
         <h4>Rocket Details</h4>
         <ul>
           <li>Rocket ID: {rocket_id}</li>
@@ -59,11 +71,7 @@ const Launch = (props) => {
           <li>Rocket Type: {rocket_type}</li>
         </ul>
       </div>
-
-      <Link className='link-button' to='/'>
-        &#8592; Back
-      </Link>
-    </>
+    </div>
   );
 };
 

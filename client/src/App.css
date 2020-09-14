@@ -54,4 +54,16 @@ img {
   padding: 10px 20px;
   color: #000;
   text-decoration: none;
+  background: white;
+  border: 1px solid #EEEEEE;
+  border-radius: 5px;
+  line-height: 1.5;
+}
+
+.launch-details-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

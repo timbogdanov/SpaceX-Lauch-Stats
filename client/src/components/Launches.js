@@ -15,6 +15,12 @@ const LAUNCHES_QUERY = gql`
   }
 `;
 
+const breakpointColumnsObj = {
+  default: 3,
+  1910: 2,
+  1390: 1,
+};
+
 const Launches = () => {
   const { loading, error, data } = useQuery(LAUNCHES_QUERY);
 
@@ -24,7 +30,7 @@ const Launches = () => {
   return (
     <div className='grid-wrapper'>
       <Masonry
-        breakpointCols={2}
+        breakpointCols={breakpointColumnsObj}
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
